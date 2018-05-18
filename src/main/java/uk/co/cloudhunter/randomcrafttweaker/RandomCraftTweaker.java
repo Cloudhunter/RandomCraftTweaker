@@ -18,8 +18,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-@ZenRegister
-@ZenClass("uk.co.cloudhunter.randomcrafttweaker.RandomCraftTweaker")
 @Mod(modid = RandomCraftTweaker.MODID, name = RandomCraftTweaker.NAME, version = RandomCraftTweaker.VERSION)
 public class RandomCraftTweaker
 {
@@ -29,26 +27,5 @@ public class RandomCraftTweaker
 
     private static Random random = new Random();
 
-    @ZenMethod
-    public static IItemStack[] pickRandomDrops(WeightedItemStack[] items) {
-        ArrayList<IItemStack> result = new ArrayList<>();
 
-        for(WeightedItemStack item : items) {
-            if(random.nextFloat() <= item.getChance()) {
-                result.add(item.getStack());
-            }
-        }
-
-        return (IItemStack[]) result.toArray();
-    }
-
-    @ZenMethod
-    public static float randomFloat() {
-        return random.nextFloat();
-    }
-
-    @ZenMethod
-    public static int randomInt() {
-        return random.nextInt();
-    }
 }
